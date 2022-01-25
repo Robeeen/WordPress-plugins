@@ -26,6 +26,7 @@ class wordCount {
 	}
 
 	function settings () {
+		add_settings_section('first_section', null, null, 'word-count-settings');
 		add_settings_field('wcp_location', 'Displa Location', array($this, 'locationHTML'), 'word-count-settings', 'first_section');
 		register_setting('wordCountPlugin', 'wcp_location', array('sanitize_callback'=>'sanitize_text_field', 'default' => '0'));
 		
